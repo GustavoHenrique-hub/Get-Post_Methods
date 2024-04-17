@@ -5,6 +5,10 @@ public class Funcionario {
 	private String cpf;
 	private String cargo;
 	
+	public Funcionario() {
+		
+	}
+	
 	public Funcionario(String name, String cpf, String cargo) {
 		this.name = name;
 		this.cpf = cpf;
@@ -44,6 +48,24 @@ public class Funcionario {
 				+ ", Cargo: " 
 				+ cargo;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj.getClass().equals(this.getClass())) {
+			Funcionario func = (Funcionario) obj;
+			
+			return func.getCpf().equals(this.getCpf());
+			
+		}else {
+			return false;
+		}
+		
+		
+		 
+	}
+	
+	
 	
 	
 }
